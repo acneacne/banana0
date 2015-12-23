@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+
+
+{% block jumbotron %}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+<h1>Oh mama</h1>
+<p>POP POP POP.</p>
+</div>
+
+{% endblock %} 	
+
+
+
+
+{% block content %}
+<div class="row">
+  <div class=" col-sm-3 col-md-4 pull-right ">
+
+   
+	<h1>{{ title }}</h1>
+
+	{{ user }}
+
+	{{ request.user }}
+
+	<form method='POST' action=''>{% csrf_token %}
+	{{ form|crispy }}
+
+	<input class= 'btn btn-primary'	type='submit' value='Signup' />
+
+	<!-- <input type='text>'
+
+	<input> -->
+
+	</form>
+
+	</div>
+</div>
+
+{% endblock %}
